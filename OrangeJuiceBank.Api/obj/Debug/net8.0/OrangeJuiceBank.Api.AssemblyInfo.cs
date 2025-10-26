@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrangeJuiceBank.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+474d237b3a09460f9ee195a8822f0c93347c84ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b26d073f3d950c292ad2fca8ec1e19e17faada3")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrangeJuiceBank.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrangeJuiceBank.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

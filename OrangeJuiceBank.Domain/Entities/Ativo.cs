@@ -17,7 +17,7 @@ namespace OrangeJuiceBank.Domain.Entities
         public DateTime DataAtualizacao { get; set; }
 
         //RELAÇÃO COM AS OUTRAS CLASSES
-        public ICollection<Carteira> Carteira { get; set; } = [];
-        public ICollection<Transacao> Transacao { get; set; } = [];
+        public ICollection<Carteira> Carteiras { get; set; } = [];
+        public ICollection<Transacao> Transacoes { get; set; } = [];
     }
 }

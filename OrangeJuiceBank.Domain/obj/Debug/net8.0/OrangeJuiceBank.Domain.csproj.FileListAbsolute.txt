@@ -1,0 +1,12 @@
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\bin\Debug\net8.0\OrangeJuiceBank.Domain.deps.json
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\bin\Debug\net8.0\OrangeJuiceBank.Domain.dll
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\bin\Debug\net8.0\OrangeJuiceBank.Domain.pdb
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.AssemblyInfoInputs.cache
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.AssemblyInfo.cs
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.csproj.CoreCompileInputs.cache
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.sourcelink.json
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.dll
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\refint\OrangeJuiceBank.Domain.dll
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\OrangeJuiceBank.Domain.pdb
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Domain\obj\Debug\net8.0\ref\OrangeJuiceBank.Domain.dll
