@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "OrangeJuiceBank.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/OrangeJuiceBank.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/OrangeJuiceBank.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "OrangeJuiceBank.Domain/1.0.0": {
+      "type": "project",
+      "path": "../OrangeJuiceBank.Domain/OrangeJuiceBank.Domain.csproj",
+      "msbuildProject": "../OrangeJuiceBank.Domain/OrangeJuiceBank.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "OrangeJuiceBank.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\greis\\.nuget\\packages\\": {}
@@ -31,7 +50,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\greis\\Desktop\\GUSTAVO\\OrangeJuiceBank\\orangebank\\OrangeJuiceBank.Domain\\OrangeJuiceBank.Domain.csproj": {
+              "projectPath": "C:\\Users\\greis\\Desktop\\GUSTAVO\\OrangeJuiceBank\\orangebank\\OrangeJuiceBank.Domain\\OrangeJuiceBank.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
