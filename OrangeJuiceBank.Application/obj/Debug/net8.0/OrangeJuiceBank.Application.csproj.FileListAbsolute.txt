@@ -10,3 +10,7 @@ C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Applic
 C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\obj\Debug\net8.0\refint\OrangeJuiceBank.Application.dll
 C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\obj\Debug\net8.0\OrangeJuiceBank.Application.pdb
 C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\obj\Debug\net8.0\ref\OrangeJuiceBank.Application.dll
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\bin\Debug\net8.0\OrangeJuiceBank.Domain.dll
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\bin\Debug\net8.0\OrangeJuiceBank.Domain.pdb
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\obj\Debug\net8.0\OrangeJuiceBank.Application.csproj.AssemblyReference.cache
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Application\obj\Debug\net8.0\OrangeJu.5B26EA44.Up2Date

@@ -710,6 +710,9 @@
       },
       "System.Threading.Channels/7.0.0": {},
       "OrangeJuiceBank.Application/1.0.0": {
+        "dependencies": {
+          "OrangeJuiceBank.Domain": "1.0.0"
+        },
         "runtime": {
           "OrangeJuiceBank.Application.dll": {
             "assemblyVersion": "1.0.0",

@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using OrangeJuiceBank.Application.Interfaces;
+using OrangeJuiceBank.Application.Services;
 using OrangeJuiceBank.Domain.Interfaces;
 using OrangeJuiceBank.Infrastructure.Data;
 using OrangeJuiceBank.Infrastructure.Repositories;
@@ -10,8 +12,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Add services to the container.
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 // Registrar Repositories
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
@@ -20,6 +20,13 @@ builder.Services.AddScoped<IAtivoRepository, AtivoRepository>();
 builder.Services.AddScoped<ICarteiraRepository, CarteiraRepository>();
 builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
 
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
+builder.Services.AddScoped<IContaService, ContaService>();
+builder.Services.AddScoped<IAtivoService, AtivoService>();
+
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -35,6 +42,7 @@ using (var scope = app.Services.CreateScope())
         app.UseSwaggerUI();
     }
 
+app.MapControllers();
 app.UseHttpsRedirection();
 
 app.Run();
