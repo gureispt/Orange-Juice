@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FLzCNb0SAQQ=",
+  "dgSpecHash": "+C6fuBTr4aQ=",
   "success": true,
   "projectFilePath": "C:\\Users\\greis\\Desktop\\GUSTAVO\\OrangeJuiceBank\\orangebank\\OrangeJuiceBank.Application\\OrangeJuiceBank.Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\greis\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

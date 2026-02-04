@@ -27,6 +27,18 @@ builder.Services.AddScoped<IAtivoService, AtivoService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+//CONFIGURANDO CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReact", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -42,7 +54,8 @@ using (var scope = app.Services.CreateScope())
         app.UseSwaggerUI();
     }
 
+app.UseCors("AllowReact");
+app.UseHttpsRedirection();  
 app.MapControllers();
-app.UseHttpsRedirection();
 
 app.Run();
