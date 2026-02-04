@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OrangeJuiceBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9db8d54ae226c3886356e2422e0bd0da4ff45403")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3862a59d7284ef229cea5d2327c8c955373e5bf6")]
 [assembly: System.Reflection.AssemblyProductAttribute("OrangeJuiceBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OrangeJuiceBank.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -57,7 +57,7 @@ namespace OrangeJuiceBank.Application.Services
             return await _contaRepository.GetByIdAsync(id);
         }
 
-        public async Task<IEnumerable<Conta>> ObterPorUsuarioAsync(Guid usuarioId)
+        public async Task<IEnumerable<Conta>> ObterPorUsuarioIdAsync(Guid usuarioId)
         {
             return await _contaRepository.GetByUsuarioIdAsync(usuarioId);
         }
