@@ -140,3 +140,4 @@ C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Api\ob
 C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Api\obj\Debug\net8.0\OrangeJuiceBank.Api.pdb
 C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Api\obj\Debug\net8.0\OrangeJuiceBank.Api.genruntimeconfig.cache
 C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Api\obj\Debug\net8.0\ref\OrangeJuiceBank.Api.dll
+C:\Users\greis\Desktop\GUSTAVO\OrangeJuiceBank\orangebank\OrangeJuiceBank.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll

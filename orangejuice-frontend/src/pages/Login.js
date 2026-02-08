@@ -53,12 +53,15 @@ function Login() {
             className="login-button"
           >
             {loading ? 'Entrando...' : 'Entrar'}
-          </button>
+            </button>
+            
+            <p className="login-hint" style={{ marginTop: '15px', cursor: 'pointer' }}>
+              Não tem conta ? <span
+                onClick={() => navigate('/cadastrar')}
+                style={{ color: '#667eea', fontWeight: 'bold', textDecoration: 'underline' }}>Cadastre-se
+              </span>
+            </p>
         </form>
-
-        <p className="login-hint">
-          Use: joao@orangejuice.com, maria@orangejuice.com ou pedro@orangejuice.com
-        </p>
       </div>
     </div>
   );

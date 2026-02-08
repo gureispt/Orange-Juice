@@ -5,6 +5,7 @@ namespace OrangeJuiceBank.Application.Interfaces
     public interface IUsuarioService
     {
         Task<Usuario> CriarUsuarioAsync(Usuario usuario);
+        Task<Usuario?> ValidarLoginAsync(string email, string senha);
         Task<Usuario?> ObterPorIdAsync(Guid id);
         Task<Usuario?> ObterPorEmailAsync(string email);
         Task<Usuario?> ObterPorCPFAsync(string cpf);
