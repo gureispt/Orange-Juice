@@ -5,10 +5,11 @@ import './Login.css';
 
 
 function Login() {
-    const [email, setEmail] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
-    const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
     
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -16,14 +17,21 @@ function Login() {
         setError('');
     
         try {
-            const response = await api.get(`/Usuario/email/${email}`);
+          const response = await api.post('/Usuario/login', {
+            email: email,
+            senha: senha
+            });
     
             if (response.data) {
                 localStorage.setItem('usuario', JSON.stringify(response.data));
                 navigate('/dashboard');
             }
-        } catch (err) {
-            setError('Email não encontrado');
+        } catch (error) {
+          if (error.response?.status === 401) {
+              setError('Email ou senha inválidos');
+          } else {
+            setError('Erro ao fazer login. Tente novamente.');
+            }
         } finally {
             setLoading(false);
         }
@@ -45,6 +53,15 @@ function Login() {
             className="login-input"
           />
           
+          <input
+              type="password"
+              placeholder="Digite sua senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+              className="login-input"
+          />
+
           {error && <p className="login-error">{error}</p>}
           
           <button 
@@ -58,7 +75,8 @@ function Login() {
             <p className="login-hint" style={{ marginTop: '15px', cursor: 'pointer' }}>
               Não tem conta ? <span
                 onClick={() => navigate('/cadastrar')}
-                style={{ color: '#667eea', fontWeight: 'bold', textDecoration: 'underline' }}>Cadastre-se
+                style={{ color: '#667eea', fontWeight: 'bold', textDecoration: 'underline' }}>
+                Cadastre-se
               </span>
             </p>
         </form>

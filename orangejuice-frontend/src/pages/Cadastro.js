@@ -29,26 +29,16 @@ function Cadatro() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log('1. Submit iniciado');
-        // setError('');
         setLoading(true);
-        
-        console.log('2. Antes da validação');
-        console.log('Senha:', formData.senha);
-        console.log('Confirmar Senha:', formData.confirmaSenha);
-        console.log('São iguais?', formData.senha === formData.confirmaSenha);
         
         //validações
         if (formData.senha !== formData.confirmaSenha) {
-            console.log('3. ENTROU NO IF - senhas diferentes!');
             setError('As senhas não são iguais');
             setLoading(false);
             return;
         }
 
-        console.log('4. Passou da validação de senha');
-
         if (formData.senha.length < 6) {
-            console.log('5. ENTROU NO IF - senha curta!');
 
             setError('A senha deve ter no mínimo 6 caracteres');
             setLoading(false);
@@ -56,7 +46,6 @@ function Cadatro() {
         }
 
         setError('');
-        console.log('6. Passou de todas validações, chamando API');
         try {
             const response = await api.post('/Usuario/cadastrar', {
                 nome: formData.nome,
@@ -65,13 +54,11 @@ function Cadatro() {
                 senha: formData.senha
             });
 
-            console.log('7. API respondeu:', response.data);
             if (response.data) {
                 alert('Cadastro realizado com sucesso! Faça login para continuar.');
                 navigate('/login');
             }
         } catch (error) {
-            console.log('8. Erro na API:', error);
             setError(error.response?.data || 'Erro ao cadastrar. Tente novamente.');
         } finally {
             setLoading(false);
