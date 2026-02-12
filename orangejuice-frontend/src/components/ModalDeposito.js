@@ -3,42 +3,42 @@ import api from '../services/api';
 import './ModalDeposito.css';
 
 function ModalDeposito({ conta, onClose, onSuccess }) {
-    const [valor, setValor] = useState('');
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState('');
+  const [valor, setValor] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-    const handleDepositar = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setError('');
+  const handleDepositar = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
 
-        const valorNumerico = parseFloat(valor);
+    const valorNumerico = parseFloat(valor);
 
-        if (valorNumerico <= 0) {
-            setError('Valor deve ser maior que zero');
-            setLoading(false);
-            return;
+    if (valorNumerico <= 0) {
+      setError('Valor deve ser maior que zero');
+      setLoading(false);
+      return;
+    }
+
+    try {
+      await api.post(`/Conta/${conta.id}/depositar`, valorNumerico, {
+        headers: {
+          'Content-Type': 'application/json'
         }
+      });
 
-        try {
-            await api.post(`/Conta/${conta.id}/depositar`, valorNumerico, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+      alert('Depósito realizado com sucesso!');
+      onSuccess();
+      onClose();
+    } catch (err) {
+      setError(err.response?.data || 'Erro ao realizar depósito');
+    } finally {
+      setLoading(false);
+    }
+  };
 
-            alert('Depósito realizado com sucesso!');
-            onSuccess();
-            onClose();
-        } catch (err) {
-            setError(err.response?.data || 'Erro ao realizar depósito');
-        } finally {
-            setLoading(false);
-        }
-    };
-
-    return (
-         <div className="modal-overlay" onClick={onClose}>
+  return (
+    <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <h2>💰 Depositar</h2>
         <p className="modal-conta-info">
@@ -72,7 +72,7 @@ function ModalDeposito({ conta, onClose, onSuccess }) {
         </form>
       </div>
     </div>
-    );
+  );
 }
 
 export default ModalDeposito;
