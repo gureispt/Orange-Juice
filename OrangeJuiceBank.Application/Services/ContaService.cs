@@ -62,6 +62,11 @@ namespace OrangeJuiceBank.Application.Services
             return await _contaRepository.GetByUsuarioIdAsync(usuarioId);
         }
 
+        public async Task<Conta?> ObterPorNumeroContaAsync(string numeroConta)
+        {
+            return await _contaRepository.GetByNumeroContaAsync(numeroConta);
+        }
+
         public async Task SacarAsync(Guid contaId, decimal valor)
         {
             if (valor <= 0)

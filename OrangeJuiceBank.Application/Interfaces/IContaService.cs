@@ -14,5 +14,6 @@ namespace OrangeJuiceBank.Application.Interfaces
         Task SacarAsync(Guid contaId, decimal valor);
         Task TransferirInternaAsync(Guid contaOrigemId, Guid contaDestinoId, decimal valor);
         Task TransferirExternaAsync(Guid contaOrigemId, Guid contaDestinoId, decimal valor);
+        Task<Conta?> ObterPorNumeroContaAsync(string numeroConta);
     }
 }

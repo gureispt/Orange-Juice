@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using OrangeJuiceBank.Application.Interfaces;
 using OrangeJuiceBank.Domain.Entities;
+using OrangeJuiceBank.Infrastructure.Repositories;
 
 namespace OrangeJuiceBank.Api.Controllers
 {
@@ -36,6 +37,18 @@ namespace OrangeJuiceBank.Api.Controllers
             var contas = await _contaService.ObterPorUsuarioIdAsync(usuarioId);
             return Ok(contas);
         }
+
+        [HttpGet("numero/{numeroConta}")]
+        public async Task<IActionResult> ObterUsuarioPorNumeroConta(string numeroConta)
+        {
+            var conta = await _contaService.ObterPorNumeroContaAsync(numeroConta);
+            if(conta == null)
+            {
+                return NotFound("Conta não encontrada");
+            }
+            return Ok(conta);
+        }
+
 
         [HttpPost("{contaId}/depositar")]
         public async Task<IActionResult> Depositar(Guid contaId, [FromBody] decimal valor)

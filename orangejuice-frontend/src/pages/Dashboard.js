@@ -3,12 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import './Dashboard.css';
 import ModalDeposito from '../components/ModalDeposito';
+import ModalSaque from '../components/ModalSaque';
+import ModalTransferencia from '../components/ModalTransferencia';
 
 function Dashboard() {
   const [usuario, setUsuario] = useState(null);
   const [contas, setContas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalDeposito, setModalDeposito] = useState(null);
+  const [modalSaque, setModalSaque] = useState(null);
+  const [modalTransferencia, setModalTransferencia] = useState(false);
 
   const navigate = useNavigate();
 
@@ -71,10 +75,11 @@ function Dashboard() {
                   <h2>R$ {conta.saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</h2>
                 </div>
                 <div className="conta-actions">
-                  <button className="action-btn" onClick={() => setModalDeposito(conta)}>Depositar</button>
-                  <button className="action-btn">Sacar</button>
-                  <button className="action-btn">Transferir</button>
+                  <button className="action-btn" onClick={() => setModalDeposito(conta)}> Depositar </button>
+                  <button className="action-btn" onClick={() => setModalSaque(conta)}> Sacar </button>
+                  <button className="action-btn" onClick={() => setModalTransferencia(true)}> Transferir </button>
                 </div>
+                
               </div>
             ))}
           </div>
@@ -92,6 +97,25 @@ function Dashboard() {
           conta={modalDeposito} 
           onClose={() => setModalDeposito(null)} 
           onSuccess={() => { carregarContas(usuario.id); setModalDeposito(null); }}
+        />
+      )}
+
+      {modalSaque && (
+        <ModalSaque
+          conta{...modalSaque}
+          onClose={() => setModalSaque(null)}
+          onSuccess={() => { carregarContas(usuario.id); setModalSaque(null); }}
+        />
+      )}
+
+      {modalTransferencia && (
+        <ModalTransferencia
+          contas={contas}
+          onClose={() => setModalTransferencia(false)}
+          onSuccess={() => {
+            carregarContas(usuario.id);
+            setModalTransferencia(false);
+          }}
         />
       )}
     </>
