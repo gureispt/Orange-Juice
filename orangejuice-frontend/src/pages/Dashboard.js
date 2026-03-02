@@ -102,7 +102,7 @@ function Dashboard() {
 
       {modalSaque && (
         <ModalSaque
-          conta{...modalSaque}
+          conta={modalSaque}
           onClose={() => setModalSaque(null)}
           onSuccess={() => { carregarContas(usuario.id); setModalSaque(null); }}
         />

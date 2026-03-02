@@ -60,7 +60,8 @@ namespace OrangeJuiceBank.Api.Controllers
                 usuario.SenhaHash = string.Empty;
 
                 return Ok(usuario);
-            } catch (Exception error)
+            }
+            catch (Exception error)
             {
                 return BadRequest(error.Message);
             }
@@ -85,7 +86,8 @@ namespace OrangeJuiceBank.Api.Controllers
                 usuarioCriado.SenhaHash = string.Empty;
 
                 return CreatedAtAction(nameof(ObterPorId), new { id = usuarioCriado.Id }, usuarioCriado);
-            }catch(Exception error)
+            }
+            catch (Exception error)
             {
                 return BadRequest(error.Message);
             }
@@ -96,7 +98,7 @@ namespace OrangeJuiceBank.Api.Controllers
             public string Email { get; set; } = string.Empty;
             public string Senha { get; set; } = string.Empty;
         }
-        
+
         public class CadastroRequest
         {
             public string Nome { get; set; } = string.Empty;

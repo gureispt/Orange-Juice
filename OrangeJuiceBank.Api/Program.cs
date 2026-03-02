@@ -23,6 +23,7 @@ builder.Services.AddScoped<ITransacaoRepository, TransacaoRepository>();
 builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IContaService, ContaService>();
 builder.Services.AddScoped<IAtivoService, AtivoService>();
+builder.Services.AddScoped<ICarteiraService, CarteiraService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

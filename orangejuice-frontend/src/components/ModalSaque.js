@@ -49,7 +49,7 @@ function ModalSaque({ conta, onClose, onSuccess }) {
                     {conta.tipoConta === 1 ? 'Conta Corrente' : 'Conta Investimento'}
                 </p>
                 <p className="modal-saldo">
-                    Saldo atual: R$ {conta.saldo.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}
+                    Saldo atual: R$ {conta.saldo.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                 </p>
 
                 <form onSubmit={handleSacar}>
