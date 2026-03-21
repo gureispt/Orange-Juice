@@ -12,5 +12,7 @@ namespace OrangeJuiceBank.Domain.Interfaces
         Task<IEnumerable<Transacao>> GetByContaIdAsync(Guid contaId);
         Task<IEnumerable<Transacao>> GetByUsuarioIdAsync(Guid usuarioId);
         Task<IEnumerable<Transacao>> GetByTipoAsync(TipoTransacao tipo);
+        Task<IEnumerable<Transacao>> GetByPeriodoAsync(Guid usuarioId, DateTime dataInicio, DateTime dataFim);
+        Task<Transacao> AddAsync(Transacao transacao);
     }
 }

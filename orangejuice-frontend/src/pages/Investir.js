@@ -128,7 +128,7 @@ function Investir() {
 
             <main className="investir-main">
                 {/* Filtros */}
-                <div className="filtros">
+                <div className="investir-filtros">
                     {['todos', 'acoes', 'cdb', 'tesouro'].map(filtro => (
                         <button
                             key={filtro}

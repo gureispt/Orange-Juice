@@ -86,7 +86,7 @@ function Dashboard() {
 
           <div className="quick-actions">
             <button className="quick-action-btn" onClick={() => navigate('/investir')}>📈 Investir</button>
-            <button className="quick-action-btn">📊 Meus Ativos</button>
+            <button className="quick-action-btn" onClick={() => navigate('/meus-ativos')}>📊 Meus Ativos</button>
             <button className="quick-action-btn">📄 Relatórios</button>
           </div>
         </main>

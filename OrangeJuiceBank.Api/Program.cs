@@ -24,6 +24,7 @@ builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IContaService, ContaService>();
 builder.Services.AddScoped<IAtivoService, AtivoService>();
 builder.Services.AddScoped<ICarteiraService, CarteiraService>();
+builder.Services.AddScoped<ITransacaoService, TransacaoService>();
 
 builder.Services.AddControllers()
     .AddJsonOptions(options =>

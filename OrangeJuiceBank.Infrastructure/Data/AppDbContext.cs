@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using OrangeJuiceBank.Domain.Entities;
 
 namespace OrangeJuiceBank.Infrastructure.Data
@@ -13,7 +14,7 @@ namespace OrangeJuiceBank.Infrastructure.Data
         {
 
         }
-        
+
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Transacao> Transacoes { get; set; }
         public DbSet<Conta> Contas { get; set; }
@@ -30,12 +31,38 @@ namespace OrangeJuiceBank.Infrastructure.Data
             .WithMany(c => c.TransacaoOrigem)
             .HasForeignKey(t => t.ContaOrigemId)
             .OnDelete(DeleteBehavior.Restrict); //Evita que deletar uma Conta delete todas as transações em cascata
-            
+
             modelBuilder.Entity<Transacao>()
             .HasOne(t => t.ContaDestino)
             .WithMany(c => c.TransacaoDestino)
             .HasForeignKey(t => t.ContaDestinoId)
-            .OnDelete(DeleteBehavior.Restrict); 
+            .OnDelete(DeleteBehavior.Restrict);
+
+
+            //CONFIGURANDO PARA USAR FORMATO UTC
+            // Configura DateTime para sempre usar UTC
+            var dateTimeConverter = new ValueConverter<DateTime, DateTime>(
+                v => v.ToUniversalTime(),
+                v => DateTime.SpecifyKind(v, DateTimeKind.Utc));
+
+            var nullableDateTimeConverter = new ValueConverter<DateTime?, DateTime?>(
+                v => v.HasValue ? v.Value.ToUniversalTime() : v,
+                v => v.HasValue ? DateTime.SpecifyKind(v.Value, DateTimeKind.Utc) : v);
+
+            foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+            {
+                foreach (var property in entityType.GetProperties())
+                {
+                    if (property.ClrType == typeof(DateTime))
+                    {
+                        property.SetValueConverter(dateTimeConverter);
+                    }
+                    else if (property.ClrType == typeof(DateTime?))
+                    {
+                        property.SetValueConverter(nullableDateTimeConverter);
+                    }
+                }
+            }
         }
     }
 }

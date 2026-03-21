@@ -36,6 +36,7 @@
 .investir-main {
   max-width: 1400px;
   margin: 0 auto;
+  margin-bottom: 30px;
   padding: 40px 20px;
 }
 
@@ -76,6 +77,9 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
+  white-space: nowrap;
+  min-width: 100px;
+  text-align: center;
 }
 
 .filtro-btn:hover {
@@ -94,6 +98,8 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
 }
 
 .ativo-card {
@@ -103,6 +109,8 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .ativo-card:hover {
@@ -113,6 +121,7 @@
 .ativo-card.selecionado {
   border: 3px solid #667eea;
   box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+  z-index: 5;
 }
 
 .ativo-header {

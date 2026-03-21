@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard';
 import Cadastro from './pages/Cadastro';
 import Investir from './pages/Investir';
 import './App.css';
+import MeusAtivos from './pages/MeusAtivos';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/cadastrar" element={<Cadastro />} />
         <Route path="/investir" element={<Investir />} />
+        <Route path="/meus-ativos" element={<MeusAtivos />} />
       </Routes>
     </BrowserRouter>
   );
